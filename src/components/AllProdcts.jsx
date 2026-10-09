@@ -1,20 +1,13 @@
 import GetProducts from '@/library/GetProducts';
 
-async function PriceUp() {
+async function AllProdcts() {
   const data = await GetProducts();
-
-  const topItems = data
-    .filter((item) => item.change.dir === 'up')
-    .sort((a, b) => b.change.pct - a.change.pct)
-    .slice(0, 6);
-
   return (
-    <div className="container mx-auto ">
-      <h4 className="text-xl py-4 font-inter font-bold">
-        <span className="text-red-700 text-base">▲</span> Prices have gone up today
-      </h4>
+    <div className="container mx-auto py-16">
+      <h4 className="text-xl py-4 font-inter font-bold">All Products</h4>
+      <span>A total of 33 products are being shown.</span>
       <div className="grid grid-cols-3 gap-6">
-        {topItems.map((item) => (
+        {data.map((item) => (
           <div
             key={item.id}
             className="p-5 rounded-3xl bg-[#fafcf9] border border-[#e3eae3] shadow-sm font-inter hover:border-green-800 transition-all duration-200 ease-in-out"
@@ -40,8 +33,18 @@ async function PriceUp() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-1 text-xs font-semibold text-red-700 bg-red-100 px-2.5 py-1 rounded-full">
-                <span className="text-xs">▲</span>
+              <div
+                className={`flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full ${
+                  item.change.dir === 'up'
+                    ? 'text-green-600 bg-green-100'
+                    : item.change.dir === 'down'
+                      ? 'text-red-700 bg-red-100'
+                      : 'text-gray-600 bg-gray-100'
+                }`}
+              >
+                <span className="text-xs">
+                  {item.change.dir === 'up' ? '▲' : item.change.dir === 'down' ? '▼' : '-'}
+                </span>
                 <span>{Math.abs(item.change.pct)} %</span>
               </div>
             </div>
@@ -52,4 +55,4 @@ async function PriceUp() {
   );
 }
 
-export default PriceUp;
+export default AllProdcts;

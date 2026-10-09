@@ -1,17 +1,15 @@
 import GetProducts from '@/library/GetProducts';
 
-async function PriceUp() {
+async function PriceDown() {
   const data = await GetProducts();
-
   const topItems = data
-    .filter((item) => item.change.dir === 'up')
+    .filter((item) => item.change.dir === 'down')
     .sort((a, b) => b.change.pct - a.change.pct)
     .slice(0, 6);
-
   return (
-    <div className="container mx-auto ">
+    <div className="container mx-auto pt-16">
       <h4 className="text-xl py-4 font-inter font-bold">
-        <span className="text-red-700 text-base">▲</span> Prices have gone up today
+        <span className="text-green-700 text-base">▼</span> Prices have come down today
       </h4>
       <div className="grid grid-cols-3 gap-6">
         {topItems.map((item) => (
@@ -40,8 +38,8 @@ async function PriceUp() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-1 text-xs font-semibold text-red-700 bg-red-100 px-2.5 py-1 rounded-full">
-                <span className="text-xs">▲</span>
+              <div className="flex items-center gap-1 text-xs font-semibold text-green-700 bg-green-100 px-2.5 py-1 rounded-full">
+                <span className="text-xs">▼</span>
                 <span>{Math.abs(item.change.pct)} %</span>
               </div>
             </div>
@@ -52,4 +50,4 @@ async function PriceUp() {
   );
 }
 
-export default PriceUp;
+export default PriceDown;

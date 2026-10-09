@@ -1,4 +1,6 @@
+import AllProdcts from '@/components/AllProdcts';
 import HeroBanner from '@/components/HeroBanner';
+import PriceDown from '@/components/PriceDown';
 import PriceUp from '@/components/PriceUp';
 import { Suspense } from 'react';
 
@@ -8,6 +10,12 @@ export default function Home() {
       <HeroBanner />
       <Suspense fallback={'...'}>
         <PriceUp />
+      </Suspense>
+      <Suspense fallback={'...'}>
+        <PriceDown />
+      </Suspense>
+      <Suspense fallback={'...'}>
+        <AllProdcts />
       </Suspense>
     </div>
   );

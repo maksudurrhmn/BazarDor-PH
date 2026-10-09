@@ -5,9 +5,9 @@ import DateTime from './DateTime';
 function HeroBanner() {
   return (
     <div className="container mx-auto py-24">
-      <div className="flex justify-between items-center border border-gray-200 rounded-2xl p-4 bg-white">
+      <div className="flex justify-between items-center border border-gray-200 rounded-2xl px-4 py-8 bg-white">
         <div className="w-1/2 flex flex-col gap-6">
-          <span className="text-[#05893E] bg-[#05893e2a] py-1 px-2 text-sm rounded-2xl font-inter w-fit ">
+          <span className="text-green-700 bg-green-100 py-2 px-4 text-sm rounded-2xl font-inter w-fit font-semibold ">
             <Suspense fallback="{...}">
               <DateTime />
             </Suspense>
