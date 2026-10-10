@@ -7,19 +7,19 @@ function HeroBanner() {
     <div className="container mx-auto py-24">
       <div className="flex justify-between items-center border border-gray-200 rounded-2xl px-4 py-8 bg-white">
         <div className="w-1/2 flex flex-col gap-6">
-          <span className="text-green-700 bg-green-100 py-2 px-4 text-sm rounded-2xl font-inter w-fit font-semibold ">
+          <span className="text-green-700 bg-green-100 py-2 px-4 text-sm rounded-2xl w-fit font-semibold ">
             <Suspense fallback="{...}">
               <DateTime />
             </Suspense>
           </span>
-          <h2 className="text-4xl font-oswald font-bold">Today's market prices at a glance</h2>
-          <p className="font-inter text-gray-900">
-            Prices of rice, pulses, oil, vegetables, fish, meat, eggs and spices – market-wise
-            details, average, minimum-maximum and price changes in one place.
+          <h2 className="text-4xl font-bold">আজকের বাজারের দাম এক নজরে</h2>
+          <p className="text-gray-900">
+            চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম — বাজারভিত্তিক বিস্তারিত, গড়,
+            সর্বনিম্ন-সর্বাধিক এবং দামের পরিবর্তন এক জায়গায়।
           </p>
           <div>
-            <button className="py-2 px-6 bg-green-800 text-white rounded-2xl cursor-pointer transition-colors ease-in duration-200 hover:bg-green-900 font-inter">
-              View all products
+            <button className="py-2 px-6 bg-green-800 text-white rounded-2xl cursor-pointer transition-colors ease-in duration-200 hover:bg-green-900">
+              সব পণ্য দেখুন
             </button>
           </div>
         </div>

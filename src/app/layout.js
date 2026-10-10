@@ -1,16 +1,13 @@
-import { Inter, Oswald } from 'next/font/google';
+import { Hind_Siliguri } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-});
-
-const oswald = Oswald({
-  variable: '--font-oswald',
-  subsets: ['latin'],
+const hindSiliguri = Hind_Siliguri({
+  subsets: ['bengali', 'latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-hind-siliguri',
+  display: 'swap',
 });
 
 export const metadata = {
@@ -20,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${oswald.variable} h-full antialiased`}>
+    <html lang="en" className={`${hindSiliguri.variable} h-full antialiased`}>
       <body>
         <Navbar />
         {children}
