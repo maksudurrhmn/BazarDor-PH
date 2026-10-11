@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import DateTime from './DateTime';
 import NavLinks from './NavLinks';
 import Link from 'next/link';
-import NavButtons from './NavButtons';
+import UserMenu from './UserMenu';
 
 function Navbar() {
   return (
@@ -26,7 +26,7 @@ function Navbar() {
               </div>
             </div>
           </Link>
-          <NavButtons></NavButtons>
+          <UserMenu></UserMenu>
         </div>
       </div>
       <div className="border-t border-b border-gray-200">

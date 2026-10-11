@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ChevronDown, LogOut, UserRound, Settings } from 'lucide-react';
+import { ChevronDown, LogOut, UserRound } from 'lucide-react';
 import { authClient } from '@/lib/auth-client';
 
 export default function UserMenu() {
@@ -18,12 +18,18 @@ export default function UserMenu() {
 
   if (!session?.user) {
     return (
-      <Link
-        href="/signin"
-        className="rounded-lg bg-[#CCFF00] px-4 py-2 text-sm font-semibold text-black transition hover:bg-[#b8e600]"
-      >
-        লগইন
-      </Link>
+      <div className="flex gap-4 items-center">
+        <Link href="/signin">
+          <button className="cursor-pointer hover:text-green-800 transition-colors ease-in-out duration-200">
+            সাইন ইন
+          </button>
+        </Link>
+        <Link href="/signup">
+          <button className="bg-green-800 text-white px-6 py-2 rounded-4xl cursor-pointer transition-colors ease-in-out duration-200 hover:bg-green-900">
+            সাইন আপ
+          </button>
+        </Link>
+      </div>
     );
   }
 

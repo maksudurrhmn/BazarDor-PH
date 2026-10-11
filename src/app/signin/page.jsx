@@ -1,13 +1,32 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
-import { Eye, EyeOff, Mail, Lock, ArrowRight } from 'lucide-react';
+import { Mail, Lock, ArrowRight } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
+import { signIn } from '@/lib/auth-client';
+import { redirect, useRouter } from 'next/navigation';
 
-export default function LoginPage() {
-  const [showPassword, setShowPassword] = useState(false);
+export default function SigninPage() {
+  const router = useRouter();
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const user = Object.fromEntries(formData.entries());
+
+    const { data, error } = await signIn.email({
+      email: user.email,
+      password: user.password,
+    });
+
+    if (data) {
+      router.push('/');
+      router.refresh();
+    }
+    if (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#F0F5F0] px-4 py-10 text-gray-900">
@@ -26,7 +45,7 @@ export default function LoginPage() {
         </div>
 
         {/* Login form */}
-        <form className="space-y-5">
+        <form className="space-y-5" onSubmit={onSubmitHandler}>
           {/* Email */}
           <div>
             <label htmlFor="email" className="mb-2 block text-sm font-medium">
@@ -62,21 +81,12 @@ export default function LoginPage() {
               <input
                 id="password"
                 name="password"
-                type={showPassword ? 'text' : 'password'}
+                type="password"
                 placeholder="পাসওয়ার্ড লিখুন"
                 autoComplete="current-password"
                 required
                 className="w-full rounded-lg border border-gray-200 py-3 pl-10 pr-11 text-sm outline-none transition placeholder:text-gray-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
               />
-
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                aria-label={showPassword ? 'Hide password' : 'Show password'}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700"
-              >
-                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-              </button>
             </div>
           </div>
 

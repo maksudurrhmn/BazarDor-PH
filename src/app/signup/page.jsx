@@ -1,16 +1,14 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
-import { Eye, EyeOff, Mail, Lock, User, ArrowRight } from 'lucide-react';
+import { Mail, Lock, User, ArrowRight } from 'lucide-react';
 import { signUp } from '@/lib/auth-client';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { FaGithub } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 
 export default function SignupPage() {
-  const [showPassword, setShowPassword] = useState(false);
-
+  const router = useRouter();
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -23,7 +21,8 @@ export default function SignupPage() {
     });
     if (data) {
       console.log(data);
-      redirect('/');
+      router.push('/');
+      router.refresh();
     }
     if (error) {
       console.log(error);
@@ -102,22 +101,13 @@ export default function SignupPage() {
               <input
                 id="password"
                 name="password"
-                type={showPassword ? 'text' : 'password'}
+                type="password"
                 placeholder="পাসওয়ার্ড তৈরি করুন"
                 autoComplete="new-password"
                 minLength={8}
                 required
                 className="w-full rounded-lg border border-gray-200 py-3 pl-10 pr-11 text-sm outline-none transition placeholder:text-gray-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
               />
-
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                aria-label={showPassword ? 'Hide password' : 'Show password'}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700"
-              >
-                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-              </button>
             </div>
 
             <p className="mt-2 text-sm text-gray-600">কমপক্ষে ৮টি অক্ষর ব্যবহার করুন।</p>
