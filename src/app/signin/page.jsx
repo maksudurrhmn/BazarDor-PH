@@ -6,6 +6,7 @@ import { FaGithub } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { signIn } from '@/lib/auth-client';
 import { redirect, useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 
 export default function SigninPage() {
   const router = useRouter();
@@ -20,11 +21,12 @@ export default function SigninPage() {
     });
 
     if (data) {
+      toast.success('Signed in successfully.');
       router.push('/');
       router.refresh();
     }
     if (error) {
-      console.log(error);
+      toast.error(error.message);
     }
   };
 

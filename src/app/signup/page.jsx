@@ -6,6 +6,7 @@ import { signUp } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import { FaGithub } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
+import toast from 'react-hot-toast';
 
 export default function SignupPage() {
   const router = useRouter();
@@ -20,12 +21,12 @@ export default function SignupPage() {
       password: user.password,
     });
     if (data) {
-      console.log(data);
+      toast.success('Account created. Successfully');
       router.push('/');
       router.refresh();
     }
     if (error) {
-      console.log(error);
+      toast.error(error.message);
     }
   };
 

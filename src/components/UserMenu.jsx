@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ChevronDown, LogOut, UserRound } from 'lucide-react';
 import { authClient } from '@/lib/auth-client';
+import toast from 'react-hot-toast';
 
 export default function UserMenu() {
   const router = useRouter();
@@ -41,11 +42,12 @@ export default function UserMenu() {
     try {
       setIsSigningOut(true);
       await authClient.signOut();
+      toast.success('You have been signed out.');
       setIsOpen(false);
       router.push('/signin');
       router.refresh();
     } catch (error) {
-      console.error('Sign out failed:', error);
+      toast.error('Sign out failed:', error);
     } finally {
       setIsSigningOut(false);
     }
