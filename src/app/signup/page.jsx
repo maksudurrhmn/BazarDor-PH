@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Mail, Lock, User, ArrowRight } from 'lucide-react';
-import { signUp } from '@/lib/auth-client';
+import { authClient, signUp } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import { FaGithub } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
@@ -28,6 +28,18 @@ export default function SignupPage() {
     if (error) {
       toast.error(error.message);
     }
+  };
+
+  const handleGoogleAuth = async () => {
+    const data = await authClient.signIn.social({
+      provider: 'google',
+    });
+  };
+
+  const handleGithubAuth = async () => {
+    const data = await authClient.signIn.social({
+      provider: 'github',
+    });
   };
 
   return (
@@ -134,15 +146,17 @@ export default function SignupPage() {
         {/* Social signup */}
         <div className="grid grid-cols-2 gap-3">
           <button
+            onClick={handleGoogleAuth}
             type="button"
-            className="flex items-center justify-center gap-2 rounded-lg border border-gray-200 px-3 py-3 text-sm font-medium transition hover:bg-gray-50"
+            className="flex items-center justify-center gap-2 rounded-lg border border-gray-200 px-3 py-3 text-sm font-medium transition hover:bg-gray-100 cursor-pointer"
           >
             <FcGoogle /> Google দিয়ে চালিয়ে যান
           </button>
 
           <button
+            onClick={handleGithubAuth}
             type="button"
-            className="flex items-center justify-center gap-2 rounded-lg border border-gray-200 px-3 py-3 text-sm font-medium transition hover:bg-gray-50"
+            className="flex items-center justify-center gap-2 rounded-lg border border-gray-200 px-3 py-3 text-sm font-medium transition hover:bg-gray-100 cursor-pointer"
           >
             <FaGithub /> GitHub দিয়ে চালিয়ে যান
           </button>

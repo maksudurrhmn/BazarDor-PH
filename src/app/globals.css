@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import '@heroui/styles';
 
 body {
   font-family: var(--font-hind-siliguri), sans-serif;
