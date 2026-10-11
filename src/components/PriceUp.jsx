@@ -1,4 +1,4 @@
-import GetProducts from '@/library/GetProducts';
+import GetProducts from '@/lib/GetProducts';
 import ProductCard from './ProductCard';
 
 async function PriceUp() {

@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import DateTime from './DateTime';
 import NavLinks from './NavLinks';
 import Link from 'next/link';
+import NavButtons from './NavButtons';
 
 function Navbar() {
   return (
@@ -25,14 +26,7 @@ function Navbar() {
               </div>
             </div>
           </Link>
-          <div className="flex gap-4">
-            <button className="cursor-pointer hover:text-green-800 transition-colors ease-in-out duration-200">
-              সাইন ইন
-            </button>
-            <button className="bg-green-800 text-white px-6 py-2 rounded-4xl cursor-pointer transition-colors ease-in-out duration-200 hover:bg-green-900">
-              সাইন আপ
-            </button>
-          </div>
+          <NavButtons></NavButtons>
         </div>
       </div>
       <div className="border-t border-b border-gray-200">

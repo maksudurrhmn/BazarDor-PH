@@ -1,4 +1,4 @@
-import GetProducts from '@/library/GetProducts';
+import GetProducts from '@/lib/GetProducts';
 import SortingProducts from './SortingProducts';
 
 async function AllProducts() {
