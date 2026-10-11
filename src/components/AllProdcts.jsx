@@ -1,5 +1,5 @@
 import GetProducts from '@/library/GetProducts';
-import ProductList from './ProductList';
+import SortingProducts from './SortingProducts';
 
 async function AllProducts() {
   const data = await GetProducts();
@@ -7,7 +7,7 @@ async function AllProducts() {
   return (
     <div className="container mx-auto py-16">
       <h4 className="text-xl py-4 font-bold">সব পণ্য</h4>
-      <ProductList products={data} />
+      <SortingProducts products={data} />
     </div>
   );
 }

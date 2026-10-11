@@ -1,4 +1,4 @@
-import ProductList from '@/components/ProductList';
+import SortingProducts from '@/components/SortingProducts';
 
 async function CategoryPage({ params }) {
   const { id } = await params;
@@ -32,7 +32,7 @@ async function CategoryPage({ params }) {
       </div>
 
       <div className="container mx-auto py-16">
-        <ProductList products={filteredProducts} />
+        <SortingProducts products={filteredProducts} />
       </div>
     </section>
   );
