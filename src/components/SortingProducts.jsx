@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import SortDropdown from '@/components/SortDropdown';
 import ProductCard from './ProductCard';
+import { useState } from 'react';
 
 export default function CategoryProducts({ products }) {
   const [sort, setSort] = useState('default');

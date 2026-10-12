@@ -3,6 +3,7 @@ import DateTime from './DateTime';
 import NavLinks from './NavLinks';
 import Link from 'next/link';
 import UserMenu from './UserMenu';
+import NavLinksSkeletons from './skeletons/NavLinksSkeletons';
 
 function Navbar() {
   return (
@@ -31,7 +32,7 @@ function Navbar() {
       </div>
       <div className="border-t border-b border-gray-200">
         <div className="container mx-auto py-1">
-          <Suspense fallback={'...'}>
+          <Suspense fallback={<NavLinksSkeletons></NavLinksSkeletons>}>
             <NavLinks />
           </Suspense>
         </div>

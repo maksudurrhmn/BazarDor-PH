@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
+import ProfileSkeleton from '@/components/skeletons/ProfileSkeleton';
 
 export default function ProfilePage() {
   const { data: session, isPending, refetch } = authClient.useSession();
@@ -102,26 +103,7 @@ export default function ProfilePage() {
   }
 
   if (isPending) {
-    return (
-      <div className="flex min-h-[60vh] items-center justify-center">
-        <LoaderCircle className="animate-spin" size={30} />
-      </div>
-    );
-  }
-
-  if (!user) {
-    return (
-      <div className="mx-auto max-w-lg px-4 py-20 text-center">
-        <h1 className="text-2xl font-bold">Please sign in</h1>
-        <p className="mt-2 text-gray-500">Sign in to view and update your profile.</p>
-        <a
-          href="/signin"
-          className="mt-6 inline-block rounded-lg bg-[#CCFF00] px-5 py-3 font-semibold text-black hover:bg-[#b8e600]"
-        >
-          Go to sign in
-        </a>
-      </div>
-    );
+    return <ProfileSkeleton />;
   }
 
   const createdAt = user.createdAt
