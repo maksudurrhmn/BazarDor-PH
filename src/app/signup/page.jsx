@@ -144,11 +144,11 @@ export default function SignupPage() {
         </div>
 
         {/* Social signup */}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
           <button
             onClick={handleGoogleAuth}
             type="button"
-            className="flex items-center justify-center gap-2 rounded-lg border border-gray-200 px-3 py-3 text-sm font-medium transition hover:bg-gray-100 cursor-pointer"
+            className="flex items-center justify-center gap-2 rounded-lg border border-gray-200 p-3 text-sm font-medium transition hover:bg-gray-100 cursor-pointer"
           >
             <FcGoogle /> Google দিয়ে চালিয়ে যান
           </button>
@@ -156,7 +156,7 @@ export default function SignupPage() {
           <button
             onClick={handleGithubAuth}
             type="button"
-            className="flex items-center justify-center gap-2 rounded-lg border border-gray-200 px-3 py-3 text-sm font-medium transition hover:bg-gray-100 cursor-pointer"
+            className="flex items-center justify-center gap-2 rounded-lg border border-gray-200 p-3 text-sm font-medium transition hover:bg-gray-100 cursor-pointer"
           >
             <FaGithub /> GitHub দিয়ে চালিয়ে যান
           </button>

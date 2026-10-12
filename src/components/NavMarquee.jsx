@@ -12,7 +12,7 @@ async function NavMarquee() {
       <Marquee className="" pauseOnHover="true">
         {data.map((item) => (
           <div key={item.id} className="px-4">
-            <div className="text-sm flex gap-2">
+            <div className="text-xs lg:text-sm flex gap-2">
               <span>{item.image}</span>
               <span>{item.nameBn}</span>
               <span className="font-bold">

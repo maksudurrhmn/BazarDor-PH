@@ -7,7 +7,7 @@ import NavLinksSkeletons from './skeletons/NavLinksSkeletons';
 
 function Navbar() {
   return (
-    <nav className="sticky top-0 z-999 bg-white">
+    <nav className="sticky top-0 z-999 bg-white px-4 xl:px-0">
       <div className="container mx-auto">
         <div className="flex justify-between items-center py-2">
           <Link href="/">
@@ -15,11 +15,11 @@ function Navbar() {
               <img
                 src="/assets/logo-1.png"
                 alt="Logo"
-                className="bg-green-800 p-1 rounded-2xl w-10 h-10"
+                className="bg-green-800 p-1 rounded-2xl w-8 h-8 md:w-10 md:h-10"
               ></img>
               <div className="leading-4">
-                <h4 className="text-2xl font-bold">বাজার দর</h4>
-                <span className="text-sm text-gray-600">
+                <h4 className=" text-xl lg:text-2xl font-bold">বাজার দর</h4>
+                <span className=" text-xs lg:text-sm text-gray-600">
                   <Suspense fallback="{...}">
                     <DateTime />
                   </Suspense>

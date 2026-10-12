@@ -5,9 +5,9 @@ import Link from 'next/link';
 
 function HeroBanner() {
   return (
-    <div className="container mx-auto py-24">
-      <div className="flex justify-between items-center border border-gray-200 rounded-2xl px-4 py-8 bg-white">
-        <div className="w-1/2 flex flex-col gap-6">
+    <div className="container mx-auto py-16 lg:py-24">
+      <div className="flex flex-col lg:flex-row mx-4 xl:mx-0 justify-between lg:items-center border border-gray-200 rounded-2xl px-4 py-8 bg-white">
+        <div className="lg:w-1/2 w-full flex flex-col gap-3 lg:gap-6">
           <span className="text-green-700 bg-green-100 py-2 px-4 text-sm rounded-2xl w-fit font-semibold ">
             <Suspense fallback="{...}">
               <DateTime />
@@ -26,7 +26,7 @@ function HeroBanner() {
             </Link>
           </div>
         </div>
-        <div className="w-1/2 flex justify-end items-center">
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end items-center">
           <Image
             src="/assets/bazar-hero.png"
             alt="Banner"

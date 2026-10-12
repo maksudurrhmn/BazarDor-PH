@@ -22,7 +22,7 @@ export default function CategoryProducts({ products }) {
   return (
     <>
       <div className="py-2 flex justify-between items-center">
-        <span>মোট {products.length}টি পণ্য দেখানো হচ্ছে</span>
+        <span className="text-sm lg:text-base">মোট {products.length}টি পণ্য দেখানো হচ্ছে</span>
 
         <SortDropdown sort={sort} setSort={setSort} />
       </div>

@@ -10,11 +10,11 @@ async function PriceUp() {
     .slice(0, 6);
 
   return (
-    <div className="container mx-auto ">
+    <div className="container mx-auto px-4 lg:px-0 ">
       <h4 className="text-xl py-4 font-inter font-bold">
         <span className="text-red-700 text-base">▲</span> আজ দাম বেড়েছে
       </h4>
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <ProductCard product={topItems}></ProductCard>
       </div>
     </div>

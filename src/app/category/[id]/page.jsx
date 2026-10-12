@@ -18,7 +18,7 @@ async function CategoryPage({ params }) {
   return (
     <section className="bg-[#F0F5F0] min-h-screen">
       <div className="container mx-auto pt-16">
-        <div className="flex items-center gap-2 p-10 bg-white rounded-2xl">
+        <div className="flex items-center gap-2 p-6 lg:p-10 bg-white rounded-2xl mx-4 xl:mx-0">
           <span className="w-14 h-14 bg-[#eef2ee] rounded-2xl flex items-center justify-center text-3xl">
             {filteredProducts[0]?.categoryIcon}
           </span>
@@ -31,7 +31,7 @@ async function CategoryPage({ params }) {
         </div>
       </div>
 
-      <div className="container mx-auto py-16">
+      <div className="xl:container xl:mx-auto py-16 mx-4 ">
         <SortingProducts products={filteredProducts} />
       </div>
     </section>
