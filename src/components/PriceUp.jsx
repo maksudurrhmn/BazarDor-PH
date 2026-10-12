@@ -10,7 +10,7 @@ async function PriceUp() {
     .slice(0, 6);
 
   return (
-    <div className="container mx-auto px-4 lg:px-0 ">
+    <div className="container mx-auto px-4 xl:px-0 ">
       <h4 className="text-xl py-4 font-inter font-bold">
         <span className="text-red-700 text-base">▲</span> আজ দাম বেড়েছে
       </h4>
