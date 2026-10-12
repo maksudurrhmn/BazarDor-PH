@@ -1,3 +1,5 @@
+import ProductCardSkeleton from '@/components/skeletons/ProductCardSkeleton';
+
 function loading() {
   return (
     <section className="min-h-screen animate-pulse bg-[#F0F5F0]">
