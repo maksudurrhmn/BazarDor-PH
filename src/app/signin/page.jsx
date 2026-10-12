@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Mail, Lock, ArrowRight } from 'lucide-react';
+import { Mail, Lock, ArrowRight, MoveLeft } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { authClient, signIn } from '@/lib/auth-client';
@@ -43,7 +43,7 @@ export default function SigninPage() {
   };
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#F0F5F0] px-4 py-10 text-gray-900">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-[#F0F5F0] px-4 py-10 text-gray-900">
       <div className="w-full max-w-md rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
         {/* Header */}
         <div className="mb-8 text-center">
@@ -147,6 +147,14 @@ export default function SigninPage() {
             অ্যাকাউন্ট তৈরি করুন
           </Link>
         </p>
+      </div>
+      <div className="mt-16">
+        <Link
+          href="/"
+          className="hover:underline flex items-center gap-1 text-sm lg:text-base w-fit"
+        >
+          <MoveLeft size={16} /> হোম পেজে ফিরে যান
+        </Link>
       </div>
     </main>
   );

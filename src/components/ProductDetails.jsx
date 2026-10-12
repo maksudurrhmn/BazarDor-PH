@@ -1,6 +1,10 @@
 import PriceCard from './PriceCard';
 
 export default function ProductDetails({ product }) {
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('bn-BD').format(price);
+  };
+
   const lowestPrice = Math.min(...product.markets.map((market) => market.min));
 
   const highestPrice = Math.max(...product.markets.map((market) => market.max));
@@ -69,7 +73,7 @@ export default function ProductDetails({ product }) {
 
           <div className="rounded-xl bg-[#F0F5F0] px-5 py-3 text-center">
             <p className="text-sm text-gray-600 font-medium">আজকের দাম</p>
-            <p className="text-2xl font-extrabold text-gray-900">{product.today}৳</p>
+            <p className="text-2xl font-extrabold text-gray-900">{formatPrice(product.today)}৳</p>
             <p className="text-sm text-gray-600 font-medium">টাকা / {product.unit}</p>
           </div>
         </section>
@@ -78,9 +82,9 @@ export default function ProductDetails({ product }) {
           <h2 className="mb-4 text-lg font-bold">দামের সারসংক্ষেপ</h2>
 
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-            <PriceCard label="সর্বনিম্ন দাম" price={lowestPrice} />
-            <PriceCard label="সর্বোচ্চ দাম" price={highestPrice} />
-            <PriceCard label="গড় দাম" price={avgPrice} />
+            <PriceCard label="সর্বনিম্ন দাম" price={formatPrice(lowestPrice)} />
+            <PriceCard label="সর্বোচ্চ দাম" price={formatPrice(highestPrice)} />
+            <PriceCard label="গড় দাম" price={formatPrice(avgPrice)} />
           </div>
 
           <h2 className="mb-3 mt-6 text-lg font-bold">বাজারভিত্তিক আজকের দাম</h2>
@@ -105,9 +109,18 @@ export default function ProductDetails({ product }) {
                   >
                     <td className="px-4 py-3">{market.market}</td>
                     <td className="px-4 py-3">{market.division}</td>
-                    <td className="px-4 py-3 text-right">{market.min} টাকা</td>
-                    <td className="px-4 py-3 text-right">{market.max} টাকা</td>
-                    <td className="px-4 py-3 text-right">{(market.min + market.max) / 2} টাকা</td>
+                    <td className="px-4 py-3 text-right">
+                      <span className="font-bold">{formatPrice(market.min)}</span> টাকা
+                    </td>
+                    <td className="px-4 py-3 text-right ">
+                      <span className="font-bold">{formatPrice(market.max)}</span> টাকা
+                    </td>
+                    <td className="px-4 py-3 text-right">
+                      <span className="font-bold">
+                        {formatPrice((market.min + market.max) / 2)}
+                      </span>{' '}
+                      টাকা
+                    </td>
                   </tr>
                 ))}
               </tbody>

@@ -2,6 +2,9 @@ import Link from 'next/link';
 import React from 'react';
 
 function ProductCard({ product }) {
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('bn-BD').format(price);
+  };
   return (
     <>
       {product.map((item) => (
@@ -23,7 +26,9 @@ function ProductCard({ product }) {
                 <span className="block text-sm font-medium text-gray-600 mb-1">আজকের দাম</span>
 
                 <div className="flex items-baseline gap-1">
-                  <span className="text-2xl font-extrabold text-gray-900">{item.today}</span>
+                  <span className="text-2xl font-extrabold text-gray-900">
+                    {formatPrice(item.today)}
+                  </span>
                   <span className="text-base font-bold text-gray-900">টাকা</span>
                 </div>
               </div>
@@ -38,7 +43,7 @@ function ProductCard({ product }) {
                 }`}
               >
                 <span>
-                  {item.change.dir === 'up' ? '▲' : item.change.dir === 'down' ? '▼' : '-'}
+                  {item.change.dir === 'up' ? '▲' : item.change.dir === 'down' ? '▼' : '—'}
                 </span>
 
                 <span>{Math.abs(item.change.pct)}%</span>

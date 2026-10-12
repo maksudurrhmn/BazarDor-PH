@@ -3,6 +3,10 @@ import Marquee from 'react-fast-marquee';
 
 async function NavMarquee() {
   const data = await GetProducts();
+
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('bn-BD').format(price);
+  };
   return (
     <div className="py-2 border-b border-gray-200 bg-white">
       <Marquee className="" pauseOnHover="true">
@@ -11,8 +15,8 @@ async function NavMarquee() {
             <div className="text-sm flex gap-2">
               <span>{item.image}</span>
               <span>{item.nameBn}</span>
-              <span>
-                {item.today} টাকা/{item.unit}
+              <span className="font-bold">
+                {formatPrice(item.today)} টাকা/{item.unit}
               </span>
               <div
                 className={`flex gap-0.5 ${
@@ -24,7 +28,7 @@ async function NavMarquee() {
                 }`}
               >
                 <span className="text-xs flex justify-center items-center">
-                  {item.change.dir === 'up' ? '▲' : item.change.dir === 'down' ? '▼' : '-'}
+                  {item.change.dir === 'up' ? '▲' : item.change.dir === 'down' ? '▼' : '—'}
                 </span>
                 <span>{Math.abs(item.change.pct)}%</span>
               </div>

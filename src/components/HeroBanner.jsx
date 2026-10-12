@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { Suspense } from 'react';
 import DateTime from './DateTime';
+import Link from 'next/link';
 
 function HeroBanner() {
   return (
@@ -18,9 +19,11 @@ function HeroBanner() {
             সর্বনিম্ন-সর্বাধিক এবং দামের পরিবর্তন এক জায়গায়।
           </p>
           <div>
-            <button className="py-2 px-6 bg-green-800 text-white rounded-2xl cursor-pointer transition-colors ease-in duration-200 hover:bg-green-900">
-              সব পণ্য দেখুন
-            </button>
+            <Link href="#all-products">
+              <button className="py-2 px-6 bg-green-800 text-white rounded-2xl cursor-pointer transition-colors ease-in duration-200 hover:bg-green-900">
+                সব পণ্য দেখুন
+              </button>
+            </Link>
           </div>
         </div>
         <div className="w-1/2 flex justify-end items-center">

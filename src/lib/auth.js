@@ -34,4 +34,9 @@ export const auth = betterAuth({
       trustedProviders: ['google', 'github', 'email-password'],
     },
   },
+  user: {
+    changeEmail: {
+      enabled: true,
+    },
+  },
 });

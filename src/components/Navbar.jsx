@@ -18,7 +18,7 @@ function Navbar() {
               ></img>
               <div className="leading-4">
                 <h4 className="text-2xl font-bold">বাজার দর</h4>
-                <span className="text-xs text-gray-500">
+                <span className="text-sm text-gray-600">
                   <Suspense fallback="{...}">
                     <DateTime />
                   </Suspense>

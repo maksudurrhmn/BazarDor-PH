@@ -60,7 +60,7 @@ export default function UserMenu() {
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
         aria-haspopup="menu"
-        className="flex items-center gap-2 rounded-xl p-2 transition hover:bg-gray-100"
+        className="flex items-center gap-2 rounded-xl p-2 transition hover:bg-gray-200"
       >
         {user.image ? (
           <img src={user.image} alt={name} className="h-9 w-9 rounded-full object-cover" />
@@ -87,7 +87,7 @@ export default function UserMenu() {
         >
           <div className="border-b border-gray-100 px-4 py-3">
             <p className="truncate text-sm font-semibold text-gray-900">{name}</p>
-            <p className="truncate text-xs text-gray-500">{user.email}</p>
+            <p className="truncate text-sm text-gray-600">{user.email}</p>
           </div>
 
           <div className="p-2">
@@ -95,10 +95,10 @@ export default function UserMenu() {
               href="/profile"
               role="menuitem"
               onClick={() => setIsOpen(false)}
-              className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-gray-700 transition hover:bg-gray-100"
+              className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-gray-700 transition hover:bg-gray-200"
             >
               <UserRound size={18} />
-              প্রোফাইল আপডেট
+              প্রোফাইল
             </Link>
 
             <button
@@ -106,7 +106,7 @@ export default function UserMenu() {
               role="menuitem"
               onClick={handleSignOut}
               disabled={isSigningOut}
-              className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-red-600 transition hover:bg-red-50 disabled:opacity-50"
+              className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-red-600 transition hover:bg-red-50 disabled:opacity-100"
             >
               <LogOut size={18} />
               {isSigningOut ? 'সাইন আউট হচ্ছে...' : 'সাইন আউট'}
