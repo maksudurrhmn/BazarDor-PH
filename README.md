@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# বাজার দর | BazarDor
 
-## Getting Started
+A modern Bangla web application built with Next.js to explore essential product prices in Bangladesh. Browse products by category, track price changes, view product details, and manage your account.
 
-First, run the development server:
+## 🔗 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-15803D?style=for-the-badge&logo=vercel&logoColor=white)](https://bazardor-ph.vercel.app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Technologies Used
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Next.js
+- React
+- JavaScript
+- Tailwind CSS
+- Better Auth
+- MongoDB Atlas
+- Google OAuth
+- React hot-toast
+- REST API
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Key Features
 
-## Learn More
+- 🛒 **Product Listings** — Browse essential products and their current market prices.
+- 🗂️ **Category-Based Browsing** — Explore products by categories such as rice, lentils, oil, vegetables, fish, and meat.
+- 📈 **Price Change Tracking** — Discover products with increasing or decreasing prices.
+- 🔍 **Product Details** — View detailed information about individual products.
+- 🔐 **Authentication** — Sign up, sign in with email and password or Google, and manage your profile.
 
-To learn more about Next.js, take a look at the following resources:
+## 📱 Responsive Design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+A user-friendly interface designed for desktop, tablet, and mobile devices.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 Design
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+BazarDor features a clean, modern interface with Bangla typography, green accents, and an intuitive shopping-focused layout.
